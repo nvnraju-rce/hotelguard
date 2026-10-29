@@ -1,0 +1,9 @@
+hotel_id,listing_name,listing_phone,listing_website,expected_label
+H01,Palm Bay Resort,0832 2275500,https://www.palmbayresort.in,ok
+H02,Hillcrest Cottages,+91 98765 43210,https://hillcrestmunnar.com/rooms,fraud
+H03,Snow Valley Inn,01902-252300,https://snowvalley-inn-booking.xyz,fraud
+H04,Lakeview Heritage Ooty,+91 99887 76655,https://lakeview-heritage-offers.top,fraud
+H05,Sea Pearl Beach Resort,+91 6752 222400,https://www.seapearlpuri.com/book,ok
+H06,Araku Valley Retreat,094400 55667,arakuvalleyretreat.in,ok
+H07,Blue Lagoon Stay,+91 97000 12121,https://bluelagoonstay.in,ok
+H08,Misty Peak Resort,+91 98765 43210,https://mistypeakresort.com,fraud

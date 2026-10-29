@@ -1,0 +1,9 @@
+hotel_id,name,destination,official_domain,official_phone,alt_phones,phone_type
+H01,Palm Bay Resort,Goa,palmbayresort.in,+91 832 2275500,,landline
+H02,Hillcrest Cottages,Munnar,hillcrestmunnar.com,+91 486 5230100,+91 94470 11223,landline
+H03,Snow Valley Inn,Manali,snowvalleyinn.in,+91 1902 252300,,landline
+H04,Lakeview Heritage,Ooty,lakeviewheritage.co.in,+91 423 2441200,,landline
+H05,Sea Pearl Beach Resort,Puri,seapearlpuri.com,+91 6752 222400,,landline
+H06,Araku Valley Retreat,Araku,arakuvalleyretreat.in,+91 94400 55667,,mobile
+H07,Blue Lagoon Stay,Goa,bluelagoonstay.in,+91 832 2260900,,landline
+H08,Misty Peak Resort,Munnar,mistypeakresort.com,+91 486 5231555,,landline

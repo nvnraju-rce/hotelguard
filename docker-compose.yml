@@ -1,0 +1,48 @@
+# Start the dashboard:      docker compose up --build
+# + scheduled monitoring:   docker compose --profile monitor up --build
+# + local LLM (Ollama):     docker compose --profile monitor --profile llm up --build
+# Dashboard: http://localhost:8501  (bound to this machine only; see README before exposing it)
+
+x-app: &app
+  build: .
+  image: hotelguard:latest
+  environment: &env
+    HOTELGUARD_DB: /app/db/hotelguard.db
+    HOTELGUARD_SEED_DEMO: "${HOTELGUARD_SEED_DEMO:-1}"
+    HOTELGUARD_MODE: "${HOTELGUARD_MODE:-offline}"
+    HOTELGUARD_INTERVAL_HOURS: "${HOTELGUARD_INTERVAL_HOURS:-24}"
+    HOTELGUARD_LLM: "${HOTELGUARD_LLM:-}"
+    OLLAMA_URL: "${OLLAMA_URL:-http://ollama:11434/api/generate}"
+  volumes:
+    - hg_db:/app/db
+    - hg_out:/app/out
+    - ./data:/app/data:ro
+
+services:
+  dashboard:
+    <<: *app
+    ports:
+      - "127.0.0.1:8501:8501"
+    restart: unless-stopped
+
+  monitor:
+    <<: *app
+    profiles: ["monitor"]
+    command: ["./monitor.sh"]
+    restart: unless-stopped
+    depends_on:
+      - dashboard
+
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["llm"]
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+    # After first start, download a model once:
+    #   docker compose exec ollama ollama pull llama3.1:8b
+
+volumes:
+  hg_db:
+  hg_out:
+  ollama_models:
