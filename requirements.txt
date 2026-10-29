@@ -1,6 +1,6 @@
 # The prototype core uses only the Python standard library (3.9+).
 # Optional upgrades, all open source:
-phonenumbers>=8.13     # robust phone parsing/validation (replace norm_phone)
+phonenumbers>=9.0.41     # robust phone parsing/validation (replace norm_phone)
 rapidfuzz>=3.0         # faster fuzzy matching than difflib
 tldextract>=5.0        # exact registrable domains (replace registrable())
 dnstwist>=20240116     # generate/detect typosquatting domains for each official domain
