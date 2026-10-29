@@ -2,7 +2,7 @@
 # Optional upgrades, all open source:
 phonenumbers>=8.13     # robust phone parsing/validation (replace norm_phone)
 rapidfuzz>=3.0         # faster fuzzy matching than difflib
-tldextract>=5.0        # exact registrable domains (replace registrable())
+tldextract>=5.4.0        # exact registrable domains (replace registrable())
 dnstwist>=20240116     # generate/detect typosquatting domains for each official domain
 playwright>=1.45       # render JavaScript-heavy booking sites
 beautifulsoup4>=4.12   # cleaner HTML text extraction
